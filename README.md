@@ -1,12 +1,10 @@
 # Nodenv::Wrapper
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nodenv/wrapper`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Install [nodenv](https://github.com/nodenv/nodenv) with your gem's bundles.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's `Gemfile`:
 
 ```ruby
 gem 'nodenv-wrapper'
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The bundled `node`/`npm` instance can be run with `bundle exec node` or `bundle exec npm`.
 
 ## Development
 
@@ -32,5 +30,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/nodenv-wrapper.
+[Bug reports and pull requests are welcome on GitHub](https://github.com/mlibrary/nodenv-wrapper).
 
