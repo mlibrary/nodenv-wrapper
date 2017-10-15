@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+ROOT = File.expand_path(File.join(['..', '..', 'ext', 'nodenv']), __FILE__)
+BINARY = File.expand_path(File.join(['shims', 'npm']), ROOT)
+
+ENV['NODENV_DIR'] = ENV['NODENV_ROOT'] = ROOT
+ENV['PATH'] = [File.expand_path('shims', ROOT), ENV['PATH']].join(File::PATH_SEPARATOR)
+
+exec(BINARY, *ARGV)

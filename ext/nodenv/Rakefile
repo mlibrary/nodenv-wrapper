@@ -1,9 +1,0 @@
-require 'rubygems'
-require 'rake/clean'
-
-task default: ['nodenv']
-
-desc "Install nodenv"
-task :nodenv do
-  sh "git clone https://github.com/nodenv/nodenv"
-end
