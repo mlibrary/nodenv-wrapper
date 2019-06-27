@@ -6,9 +6,9 @@ task default: ['nodenv']
 
 desc "Install nodenv"
 task :nodenv do
-  sh "[ -d nodenv ] || git clone https://github.com/nodenv/nodenv"
-  sh "[ -d nodenv/plugins/node-build ] || git clone https://github.com/nodenv/node-build nodenv/plugins/node-build"
+  sh "git clone https://github.com/nodenv/nodenv || /bin/true"
+  sh "git clone https://github.com/nodenv/node-build nodenv/plugins/node-build || /bin/true"
   ENV['NODENV_ROOT'] = ENV['NODENV_DIR'] = "#{File.dirname(__FILE__)}/nodenv"
-  sh "[ -d nodenv/versions/#{Nodenv::Wrapper::NODE_VERSION} ] || #{File.dirname(__FILE__)}/nodenv/bin/nodenv install #{Nodenv::Wrapper::NODE_VERSION}"
+  sh "#{File.dirname(__FILE__)}/nodenv/bin/nodenv install -f #{Nodenv::Wrapper::NODE_VERSION}"
   IO.write('nodenv/version', Nodenv::Wrapper::NODE_VERSION)
 end
