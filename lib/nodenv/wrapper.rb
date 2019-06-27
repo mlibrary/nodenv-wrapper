@@ -1,7 +1,7 @@
-require "nodenv/wrapper/version"
+require_relative "wrapper/version"
 
 module Nodenv
   module Wrapper
-    # Your code goes here...
+    NODE_VERSION = '8.6.0'
   end
 end

@@ -1,9 +1,20 @@
 #!/usr/bin/env ruby
 
-ROOT = File.expand_path(File.join(['..', '..', 'ext', 'nodenv']), __FILE__)
-BINARY = File.expand_path(File.join(['shims', 'npm']), ROOT)
+require_relative '../lib/nodenv/wrapper'
 
-ENV['NODENV_DIR'] = ENV['NODENV_ROOT'] = ROOT
-ENV['PATH'] = [File.expand_path('shims', ROOT), ENV['PATH']].join(File::PATH_SEPARATOR)
+NODENV_ROOT = File.expand_path(
+  File.join(['..', '..', 'ext', 'nodenv']),
+   __FILE__
+)
+
+NODE_BIN_DIR = File.expand_path(
+  File.join(['versions', Nodenv::Wrapper::NODE_VERSION, 'bin']),
+  NODENV_ROOT
+)
+
+BINARY = File.expand_path(File.basename(__FILE__), NODE_BIN_DIR)
+
+ENV['NODENV_DIR'] = ENV['NODENV_ROOT'] = NODENV_ROOT
+ENV['PATH'] = [NODE_BIN_DIR, ENV['PATH']].join(File::PATH_SEPARATOR)
 
 exec(BINARY, *ARGV)
