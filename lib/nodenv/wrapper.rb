@@ -13,7 +13,7 @@ module Nodenv
     NODE = File.join(PATH, 'node')
 
     def self.export_path
-      ENV['PATH'] = [ENV['PATH'], PATH].join(File::PATH_SEPARATOR)
+      ENV['PATH'] = [PATH, ENV['PATH']].join(File::PATH_SEPARATOR)
     end
   end
 end
