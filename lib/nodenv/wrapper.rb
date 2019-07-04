@@ -5,7 +5,7 @@ module Nodenv
     NODE_VERSION = '8.6.0'
 
     PATH = File.expand_path(
-      File.join(%W(.. .. .. ext nodenv versions #{NODE_VERSION} bin))
+      File.join(%W(.. .. .. ext nodenv versions #{NODE_VERSION} bin)),
       __FILE__
     )
 
